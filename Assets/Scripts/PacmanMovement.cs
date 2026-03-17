@@ -1,30 +1,20 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PacmanMovement : MonoBehaviour
+public class PacManMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-
     private Rigidbody2D rb;
-    private Vector2 input;
 
-    void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0f;
-        rb.freezeRotation = true;
     }
 
     void Update()
     {
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
-        input = input.normalized;
+        float verticalInput = Input.GetAxis("Vertical");
+        float moveInput = Input.GetAxis("Horizontal");
+        rb.linearVelocity = new Vector2(moveInput * moveSpeed, verticalInput * moveSpeed);
     }
+}  
 
-    void FixedUpdate()
-    {
-        Vector2 velocity = input * moveSpeed;
-        rb.linearVelocity = velocity;
-    }
-}
