@@ -24,9 +24,9 @@
 -en als ze hem niet zien dan zullen ze hem proberen op te sporen todat ze hem zien
 
 -als pacman gepakt wordt of een manier heeft om hun te defeaten
-
+![alt text](flowchartPacman.png)
 # Gameplay loop
-insert foto hier
+![alt text](GameplayLoop.png)
 
 Wat we gedaan hebben 3/10/26
 -Mees Tervoort heeft de orb gemaakt en de script ervoor, ook en player script met een int voor de orbs.
