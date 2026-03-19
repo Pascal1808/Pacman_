@@ -354,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3735804101745072390, guid: 603ad22ddc7f3c2438b9c9143fe93d8d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.553341
+      value: -5.26
       objectReference: {fileID: 0}
     - target: {fileID: 3735804101745072390, guid: 603ad22ddc7f3c2438b9c9143fe93d8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4888182
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 3735804101745072390, guid: 603ad22ddc7f3c2438b9c9143fe93d8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7975592401264747954, guid: 603ad22ddc7f3c2438b9c9143fe93d8d, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1817659213}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -428,7 +432,12 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!4 &1817659213 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3921269997925780720, guid: 9ad186d9c17653b4b827cfc56ba5cb99, type: 3}
+  m_PrefabInstance: {fileID: 6570766241151073288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6570766241151073288
 PrefabInstance:
   m_ObjectHideFlags: 0
