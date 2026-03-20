@@ -19,7 +19,16 @@ public class PacManMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("SpeedOrb"))
+        {
+            moveSpeed += 2.5f;
+            Destroy(collision.gameObject);
+        }
+    }
 }
  
 
