@@ -5,6 +5,7 @@ public class PacManMovement : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public int health = 100;
 
     void Start()
     {
@@ -19,7 +20,23 @@ public class PacManMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    } 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+         if (collision.gameObject.tag == "Enemy")
+        {
+            health -= 100;
+ 
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+    }
+    private void Die()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+    }
 }
  
 
