@@ -37,6 +37,15 @@ public class PacManMovement : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("SpeedOrb"))
+        {
+            moveSpeed += 2.5f;
+            Destroy(collision.gameObject);
+        }
+    }
 }
  
 
