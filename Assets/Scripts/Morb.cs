@@ -1,13 +1,22 @@
 using UnityEngine;
+using TMPro;
 
 public class Morb : MonoBehaviour
 {
+    private TextMeshProUGUI MorbText;
+    public int morbsToGive = 1;
+
+    private void Start()
+    {
+        MorbText = GameObject.FindWithTag("MorbText").GetComponent<TextMeshProUGUI>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
-            Pacman Pacman = collision.gameObject.GetComponent<Pacman>();
-            Pacman.Morbs += 1;
+            Pacman player = collision.gameObject.GetComponent<Pacman>();
+            player.Morbs += morbsToGive;
+            MorbText.text = player.Morbs.ToString();
             Destroy(gameObject);
         }
     }
