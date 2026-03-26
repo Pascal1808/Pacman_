@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Pacman : MonoBehaviour
@@ -17,7 +16,15 @@ public class Pacman : MonoBehaviour
             Destroy(gameObject);
             Animator.Play("Power_upp");
         }
+            if (collision.gameObject.tag == "Burrr")
+            {
+                Die();
+            }
     }
+    private void Die()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     [Header("Animator Settings")]
     public Animator animator; // Reference to the Animator component
 
