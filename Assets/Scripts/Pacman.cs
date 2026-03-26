@@ -17,21 +17,25 @@ public class Pacman : MonoBehaviour
             Destroy(gameObject);
             Animator.Play("Power_upp");
         }
+
+        if (collision.CompareTag("Burrr"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     }
     [Header("Animator Settings")]
-    public Animator animator; // Reference to the Animator component
+    public Animator animator;
 
     [Header("Power-Up Settings")]
-    public string powerUpTriggerName = "PowerUp"; // Animator trigger for power-up animation
-    public string normalStateName = "Idle";       // Default animation state
-    public float powerUpDuration = 5f;            // Duration of power-up effect
+    public string powerUpTriggerName = "PowerUp";
+    public string normalStateName = "Idle";
+    public float powerUpDuration = 5f;
 
     private bool isPoweredUp = false;
     private float powerUpTimer = 0f;
 
     void Update()
     {
-        // Countdown for power-up duration
         if (isPoweredUp)
         {
             powerUpTimer -= Time.deltaTime;
@@ -42,7 +46,6 @@ public class Pacman : MonoBehaviour
         }
     }
 
-    // Call this when player picks up a power-up
     public void ActivatePowerUp()
     {
         if (animator == null)
@@ -54,25 +57,15 @@ public class Pacman : MonoBehaviour
         isPoweredUp = true;
         powerUpTimer = powerUpDuration;
 
-        // Trigger the power-up animation
-        animator.ResetTrigger(powerUpTriggerName); // Avoid stacking triggers
+        animator.ResetTrigger(powerUpTriggerName);
         animator.SetTrigger(powerUpTriggerName);
     }
 
-    // Revert to normal animation
     private void EndPowerUp()
     {
         isPoweredUp = false;
 
-        // Play the normal animation state
         animator.Play(normalStateName);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Burrr"))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        }
     }
 }
 
