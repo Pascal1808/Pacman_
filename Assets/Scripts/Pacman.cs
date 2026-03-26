@@ -67,6 +67,13 @@ public class Pacman : MonoBehaviour
         // Play the normal animation state
         animator.Play(normalStateName);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Burrr"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+    }
 }
 
 
