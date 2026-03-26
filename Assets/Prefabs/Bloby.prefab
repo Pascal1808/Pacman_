@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8494065316374042620}
   - component: {fileID: 1433846242980898886}
   - component: {fileID: 6173955732291894905}
-  - component: {fileID: 2965469456108150328}
   - component: {fileID: 6142953614580093459}
   - component: {fileID: 7753483393708793548}
   m_Layer: 0
@@ -113,20 +112,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 3
---- !u!114 &2965469456108150328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8900849296158526641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c398a3f16d9fb43b0fc97c974e691a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChasePlayer
-  Player: {fileID: 0}
-  speed: 2
 --- !u!50 &6142953614580093459
 Rigidbody2D:
   serializedVersion: 5
