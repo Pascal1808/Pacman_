@@ -35,7 +35,7 @@ public class PacManMovement : MonoBehaviour
     }
     private void Die()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

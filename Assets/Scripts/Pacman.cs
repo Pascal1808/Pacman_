@@ -18,6 +18,7 @@ public class Pacman : MonoBehaviour
         }
             if (collision.gameObject.tag == "Burrr")
             {
+     
                 Die();
             }
     }
@@ -74,6 +75,7 @@ public class Pacman : MonoBehaviour
         // Play the normal animation state
         animator.Play(normalStateName);
     }
+
 }
 
 

@@ -9,5 +9,6 @@ public class ChasePlayer : MonoBehaviour
         Vector3 direction = (Player.position - transform.position).normalized;
         transform.position += direction * speed * Time.deltaTime;
     }
+    
 }
 
