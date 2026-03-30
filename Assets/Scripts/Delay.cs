@@ -1,22 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class Delay : MonoBehaviour
 {
-    public int spawnDelay = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float spawnDelay = 0;
+    public GameObject Burrr;
+    public GameObject ghost;
     void Start()
     {
-       Invoke ("SpawnDelay", spawnDelay);
+       Burrr.SetActive(false);
+       ghost.SetActive(false);
+        StartCoroutine(ActivateObjectAfterDelay());
     }
-
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ActivateObjectAfterDelay()
     {
-        
-    }
-
-    private void SpawnDelay()
-    {
-        gameObject.SetActive(true);
+        yield return new WaitForSeconds(spawnDelay);
+        Burrr.SetActive(true);
+        ghost.SetActive(true);
     }
 }
